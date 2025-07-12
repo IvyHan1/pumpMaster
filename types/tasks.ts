@@ -1,4 +1,4 @@
-export interface ITask {
+export interface IPUMP {
   id: string,
   pumpName: string
 }

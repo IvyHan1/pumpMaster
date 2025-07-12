@@ -1,14 +1,14 @@
-import { ITask } from "./types/tasks";
+import { IPUMP } from "./types/tasks";
 
 const baseUrl = 'http://localhost:3001';
 
-export const getAllTodos = async (): Promise<ITask[]> => {
+export const getAllTodos = async (): Promise<IPUMP[]> => {
   const res = await fetch(`${baseUrl}/tasks`, { cache: 'no-store' });
   const todos = await res.json();
   return todos;
 }
 
-export const addTodo = async (todo: ITask): Promise<ITask> => {
+export const addTodo = async (todo: IPUMP): Promise<IPUMP> => {
   const res = await fetch(`${baseUrl}/tasks`, {
     method: 'POST',
     headers: {
@@ -20,7 +20,7 @@ export const addTodo = async (todo: ITask): Promise<ITask> => {
   return newTodo;
 }
 
-export const editTodo = async (todo: ITask): Promise<ITask> => {
+export const editTodo = async (todo: IPUMP): Promise<IPUMP> => {
   const res = await fetch(`${baseUrl}/tasks/${todo.id}`, {
     method: 'PUT',
     headers: {
